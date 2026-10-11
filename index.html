@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuldeep Brothers - Future-Ready AI & Python Automation Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #05070d;
+            --bg-card: rgba(18, 24, 38, 0.6);
+            --border-card: rgba(255, 255, 255, 0.08);
+            --primary: #3b82f6;
+            --accent: #8b5cf6;
+            --cyan: #06b6d4;
+            --text-white: #f8fafc;
+            --text-dim: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.15) 0%, transparent 40%);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 7, 13, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-card);
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: var(--text-dim);
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--text-white);
+        }
+
+        .btn-glow {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff !important;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            padding: 180px 8% 100px;
+            text-align: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: var(--cyan);
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            letter-spacing: -1.5px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services {
+            padding: 80px 8%;
+        }
+.section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 35px;
+            backdrop-filter: blur(12px);
+            transition: 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: rgba(59, 130, 246, 0.5);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: rgba(59, 130, 246, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--cyan);
+        }
+
+        .card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-dim);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        .projects-section {
+            padding: 80px 8%;
+            background: rgba(11, 15, 25, 0.5);
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-card);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 24px;
+            color: #38bdf8;
+        }
+
+        .tech-stack {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .tech-tag {
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #38bdf8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .demo-section {
+            padding: 80px 8%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .terminal-box {
+            background: #020408;
+            border: 1px solid var(--border-card);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+        }
+
+        .terminal-header {
+            background: #0d1117;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-card);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .terminal-body {
+            padding: 25px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            color: #38bdf8;
+            line-height: 1.8;
+        }
+
+        .command { color: #a5d6ff; }
+        .success { color: #7ee787; }
+        .accent { color: #d2a8ff; }
+
+        .cta-box {
+            margin: 100px 8%;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 24px;
+            text-align: center;
+            position: relative;
+            backdrop-filter: blur(20px);
+        }
+.btn-whatsapp {
+            display: inline-block;
+            background: #25d366;
+            color: #fff;
+            padding: 16px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            margin-top: 25px;
+            box-shadow: 0 0 25px rgba(37, 211, 102, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(37, 211, 102, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--border-card);
+            color: var(--text-dim);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 38px; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">KULDEEP BROTHERS</div>
+        <nav>
+            <a href="#services">Services</a>
+            <a href="#projects">My Work</a>
+            <a href="#demo">Live Demo</a>
+            <a href="#contact" class="btn-glow">Get Started</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <span class="badge">🚀 AI & Python Automation Agency</span>
+        <h1>Automate Business Operations With <br><span class="gradient-text">Custom AI & Python Solutions</span></h1>
+        <p>हम मैनुअल और समय बर्बाद करने वाले वर्कफ़्लो को 100% ऑटोमेट करके आपके बिज़नेस के हर महीने 80+ घंटे बचाते हैं।</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-title">
+            <h2>Our Core Capabilities</h2>
+            <p style="color: var(--text-dim)">हम किन-किन चीज़ों को ऑटोमेट कर सकते हैं</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">⚡</div>
+                <h3>Automated Lead Extraction</h3>
+                <p>सोशल मीडिया, बिज़नेस डायरेक्टरीज़ और वेबसाइट्स से टारगेटेड लीड्स को ऑटोमैटिक निकालकर Google Sheets में स्ट्रक्चर्ड तरीक़े से सेव करना।</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🤖</div>
+                <h3>AI Personalized Outreach</h3>
+                <p>AI द्वारा हर क्लाइंट के प्रोफाइल के हिसाब से पर्सनलाइज्ड ईमेल / मैसेज ड्राफ्ट करके ऑटोमैटिक भेजना और फॉलो-अप हैंडल करना।</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">🔗</div>
+                <h3>API & Database Integration</h3>
+                <p>विभिन्न सॉफ्टवेयर, Google Sheets, CRMs और डेटाबेस को आपस में कनेक्ट करके रीयल-टाइम डेटा ट्रांसफर ऑटोमेशन।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Projects Section (New Added) -->
+    <section id="projects" class="projects-section">
+        <div class="section-title">
+            <h2>Featured Automation Projects</h2>
+            <p style="color: var(--text-dim)">मेरे द्वारा बनाए गए मुख्य ऑटोमेशन सिस्टम और उनका विवरण</p>
+        </div>
+        <div class="project-card">
+            <h3>1. Advanced Python Web Scraping Bot</h3>
+            <p style="color: var(--text-dim);">यह बोट इंटरनेट और विभिन्न ऑनलाइन डायरेक्टरीज़ से किसी भी बिज़नेस या टारगेटेड ऑडियंस का पूरा डेटा (जैसे नाम, फोन नंबर, ईमेल, और वेबसाइट) कुछ ही सेकंड्स में निकालकर सीधे गूगल शीट्स (Google Sheets) में सुरक्षित रूप से सेव कर देता है। इससे हफ्तों का मैनुअल काम मिनटों में हो जाता है।</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">BeautifulSoup / Selenium</span>
+                <span class="tech-tag">Google Sheets API</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>2. AI-Powered Cold Email & Outreach Agent</h3>
+<p style="color: var(--text-dim);">यह सिस्टम हर लीड की प्रोफाइल का विश्लेषण करके OpenAI (LLM) की मदद से पूरी तरह से पर्सनलाइज्ड ईमेल या मैसेज खुद तैयार करता है और बिना किसी मानवीय हस्तक्षेप के ऑटोमैटिक सेंड करता है, जिससे क्लाइंट कन्वर्जन रेट काफी बढ़ जाता है।</p>
+            <div class="tech-stack">
+                <span class="tech-tag">OpenAI API</span>
+                <span class="tech-tag">Python Automation</span>
+                <span class="tech-tag">SMTP / Automated Outreach</span>
+            </div>
+        </div>
+        <div class="project-card">
+            <h3>3. Custom CRM & Workflow Synchronizer</h3>
+            <p style="color: var(--text-dim);">अलग-अलग प्लेटफॉर्म्स और ऐप्स के बीच डेटा को सिंक करने के लिए कस्टम बैकएंड स्क्रिप्ट्स। यह आपके रोजाना के बोरिंग डेटा एंट्री के काम को पूरी तरह खत्म कर देता है और रीयल-टाइम रिपोर्ट तैयार करता है।</p>
+            <div class="tech-stack">
+                <span class="tech-tag">REST APIs</span>
+                <span class="tech-tag">Database Management</span>
+                <span class="tech-tag">Cloud Tasks</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Terminal Section -->
+    <section id="demo" class="demo-section">
+        <div class="section-title">
+            <h2>Live Automation Execution</h2>
+            <p style="color: var(--text-dim)">देखें हमारा बैकएंड ऑटोमेशन सिस्टम कैसे काम करता है</p>
+        </div>
+        <div class="terminal-box">
+            <div class="terminal-header">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <span style="font-size: 12px; color: var(--text-dim); margin-left: 10px;">kuldeep_agent.py</span>
+            </div>
+            <div class="terminal-body">
+                <p class="command">> python3 run_agency_pipeline.py --target="Real Estate Agencies"</p>
+                <p>[+] Initializing Python Web Scraper...</p>
+                <p>[+] Connecting to Target Sources...</p>
+                <p class="success">[✔] Successfully Scraped 250 Verified Leads with Contact Details.</p>
+                <p class="accent">[🤖] Feeding Data into OpenAI API for Personalized Cold Emails...</p>
+                <p class="success">[✔] Generated 250 Custom Proposals in 4.2 seconds.</p>
+                <p class="accent">[📊] Synchronizing with Google Sheets API & CRM...</p>
+                <p class="success">[✔] Pipeline Completed Successfully. Ready for Automated Outreach!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call To Action Section -->
+    <section id="contact" class="cta-box">
+        <h2>Ready To Automate Your Business?</h2>
+        <p style="color: var(--text-dim); max-width: 600px; margin: 10px auto 0;">आज ही हमारे साथ 15-मिनट की फ्री AI Audit कॉल शेड्यूल करें और जानें कि आप अपने बिज़नेस में समय कैसे बचा सकते हैं।</p>
+        <a href="https://wa.me/918740982212?text=Hello%20Kuldeep%20Brothers,%20I%20want%20to%20automate%20my%20business!" target="_blank" class="btn-whatsapp">Chat On WhatsApp Now</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Kuldeep Brothers AI Agency. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+WhatsApp.com
+Share on WhatsApp
+WhatsApp Messenger: More than 2 billion people
+          in over 180 countries use WhatsApp to stay in touch with friends and
+          family, anytim...
